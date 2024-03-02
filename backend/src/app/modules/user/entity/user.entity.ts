@@ -1,19 +1,15 @@
-import { Field, ObjectType, ID } from '@nestjs/graphql';
+import { Field, ObjectType } from '@nestjs/graphql';
+import { BaseEntity } from 'backend/src/utils/entity-base';
+import { Listing } from '../../listing/entity/listing.entity';
 
 @ObjectType()
-export class User {
-  @Field(() => ID)
-  id: string;
-
+export class User extends BaseEntity {
   @Field()
   name: string;
 
   @Field()
   email: string;
 
-  @Field()
-  createdAt: Date;
-
-  @Field()
-  updatedAt: Date;
+  @Field(() => [Listing], { nullable: 'itemsAndList' })
+  listings?: Listing[];
 }

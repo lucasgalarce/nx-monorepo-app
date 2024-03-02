@@ -6,6 +6,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AppResolver } from './resolvers/app.resolver';
 import { UserModule } from './modules/user/user.module';
+import { ListingModule } from './modules/listing/listing.module';
+import { TransactionModule } from './modules/transaction/transaction.module';
 
 @Module({
   imports: [
@@ -14,6 +16,8 @@ import { UserModule } from './modules/user/user.module';
       autoSchemaFile: true,
     }),
     UserModule,
+    ListingModule,
+    TransactionModule,
   ],
   controllers: [AppController],
   providers: [AppService, AppResolver],
