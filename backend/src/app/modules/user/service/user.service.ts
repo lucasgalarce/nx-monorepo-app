@@ -12,14 +12,6 @@ export class UserService {
     return this.prisma.user.findMany();
   }
 
-  async findListingsByUserId(userId: string): Promise<Listing[]> {
-    // Implementa la lógica para consultar la base de datos y retornar los listados
-    // asociados al userId proporcionado. Esto es un ejemplo usando Prisma:
-    return this.prisma.listing.findMany({
-      where: { userId },
-    });
-  }
-
   async create(createUserDto: CreateUserDto): Promise<User> {
     const user = {
       id: nanoid(),

@@ -8,6 +8,7 @@ import { AppResolver } from './resolvers/app.resolver';
 import { UserModule } from './modules/user/user.module';
 import { ListingModule } from './modules/listing/listing.module';
 import { TransactionModule } from './modules/transaction/transaction.module';
+import { SeedService } from './modules/seed/service/seed.service';
 
 @Module({
   imports: [
@@ -20,6 +21,6 @@ import { TransactionModule } from './modules/transaction/transaction.module';
     TransactionModule,
   ],
   controllers: [AppController],
-  providers: [AppService, AppResolver],
+  providers: [AppService, AppResolver, SeedService],
 })
 export class AppModule {}

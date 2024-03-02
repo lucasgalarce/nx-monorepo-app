@@ -12,9 +12,9 @@ export class UserResolver {
     return this.userService.findAll();
   }
 
-  @ResolveField('listings', (returns) => [Listing])
-  async getListings(@Parent() user: User) {
-    const { id } = user;
-    return this.userService.findListingsByUserId(id);
-  }
+  // @ResolveField('listings', (returns) => [Listing])
+  // async getListings(@Parent() user: User) {
+  //   const { id } = user;
+  //   return this.userService.findListingsByUserId(id);
+  // }
 }

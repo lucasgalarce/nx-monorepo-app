@@ -19,7 +19,6 @@ model User {
   email     String    @unique
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
-  listings  Listing[]
   transactions Transaction[]
 }
 
@@ -34,8 +33,6 @@ model Listing {
   zipcode     String
   createdAt   DateTime    @default(now())
   updatedAt   DateTime    @updatedAt
-  owner       User        @relation(fields: [userId], references: [id])
-  userId      String
   transactions Transaction[]
 }
 

@@ -13,26 +13,26 @@ export class ListingService {
     return this.prisma.listing.findMany();
   }
 
-  // async create(createListingDto: CreateListingDto): Promise<User> {
-  //   const user = {
-  //     id: nanoid(),
-  //     ...createListingDto,
-  //     createdAt: new Date(),
-  //     updatedAt: new Date(),
-  //   };
+  async create(createListingDto: CreateListingDto): Promise<Listing> {
+    const listing = {
+      id: nanoid(),
+      ...createListingDto,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    };
 
-  //   return this.prisma.user.create({ data: user });
-  // }
-
-  async createListingForUser(
-    userId: string,
-    listingData: CreateListingDto
-  ): Promise<Listing> {
-    return this.prisma.listing.create({
-      data: {
-        ...listingData,
-        userId: userId,
-      },
-    });
+    return this.prisma.listing.create({ data: listing });
   }
+
+  // async createListingForUser(
+  //   userId: string,
+  //   listingData: CreateListingDto
+  // ): Promise<Listing> {
+  //   return this.prisma.listing.create({
+  //     data: {
+  //       ...listingData,
+  //       userId: userId,
+  //     },
+  //   });
+  // }
 }
