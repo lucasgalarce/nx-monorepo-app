@@ -1,0 +1,14 @@
+import { OmitType } from '@nestjs/graphql';
+import { User } from '../entity/user.entity';
+
+export class CreateUserDto extends OmitType(User, [
+  'id',
+  'createdAt',
+  'updatedAt',
+] as const) {}
+
+export class UserDto extends OmitType(User, [
+  'id',
+  'createdAt',
+  'updatedAt',
+] as const) {}
