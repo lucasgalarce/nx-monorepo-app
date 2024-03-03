@@ -8,7 +8,12 @@ export class TransactionService {
   constructor(private prisma: PrismaService) {}
 
   async findAll(): Promise<Transaction[]> {
-    return this.prisma.transaction.findMany();
+    return this.prisma.transaction.findMany({
+      include: {
+        user: true,
+        listing: true,
+      },
+    });
   }
 
   async createTransaction(
