@@ -31,10 +31,15 @@ const ListingsPage: React.FC = () => {
   console.log(data);
 
   return (
-    <div className="space-y-4">
-      {data?.listings.map((listing) => (
-        <ListingItem key={listing.id} listing={listing} />
-      ))}
+    <div className="container mx-auto px-4 pt-5">
+      <div className="w-full h-[100px] flex items-center justify-center">
+        <h1 className="text-center text-3xl font-bold">Listings 🎉</h1>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {data?.listings.map((listing) => (
+          <ListingItem key={listing.id} listing={listing} />
+        ))}
+      </div>
     </div>
   );
 };

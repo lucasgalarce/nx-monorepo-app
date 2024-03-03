@@ -6,7 +6,7 @@ interface ListingItemProps {
 
 const ListingItem: React.FC<ListingItemProps> = ({ listing }) => {
   return (
-    <div className="border p-4 rounded-lg mb-4">
+    <div className="border p-4 rounded-lg shadow-md w-full md:max-w-sm bg-blue-50">
       <h2 className="text-xl font-bold">{listing.title}</h2>
       <p>{listing.description}</p>
       <p className="font-semibold">Price: ${listing.price}</p>
