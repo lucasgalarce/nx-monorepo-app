@@ -11,7 +11,11 @@ export class ListingService {
   async findAll(): Promise<Listing[]> {
     return this.prisma.listing.findMany({
       include: {
-        transactions: true,
+        transactions: {
+          include: {
+            user: true,
+          },
+        },
       },
     });
   }

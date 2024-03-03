@@ -5,15 +5,14 @@ import { Listing } from '../types/types';
 
 const GET_LISTINGS = gql`
   query {
-    transactions {
-      id
-      user {
+    listings {
+      title
+      price
+      transactions {
         id
-        name
-        email
-      }
-      listing {
-        title
+        user {
+          name
+        }
       }
     }
   }
@@ -29,6 +28,7 @@ const ListingsPage: React.FC = () => {
     console.log(error);
     return <p>Error :</p>;
   }
+  console.log(data);
 
   return (
     <div className="space-y-4">
