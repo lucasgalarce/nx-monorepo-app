@@ -1,4 +1,3 @@
-// src/seed/seed.service.ts
 import { Injectable, Logger } from '@nestjs/common';
 import { UserService } from '../../user/service/user.service';
 import { ListingService } from '../../listing/service/listing.service';
@@ -32,6 +31,4 @@ export class SeedService {
     }
     this.logger.debug('Done seeding.');
   }
-
-  // Puedes agregar más métodos para seedear otros modelos
 }
