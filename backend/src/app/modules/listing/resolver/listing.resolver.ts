@@ -1,6 +1,7 @@
-import { Query, Resolver } from '@nestjs/graphql';
+import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { ListingService } from '../service/listing.service';
-import { Listing } from '../entity/listing.entity'; // Asegúrate de tener esta clase de entidad definida para GraphQL
+import { Listing } from '../entity/listing.entity';
+import { CreateListingDto } from '../dto/listing.dto';
 
 @Resolver(() => Listing)
 export class ListingResolver {
@@ -9,5 +10,12 @@ export class ListingResolver {
   @Query(() => [Listing])
   async listings() {
     return this.listingService.findAll();
+  }
+
+  @Mutation(() => Listing)
+  async createListing(
+    @Args('createListingInput') createListingInput: CreateListingDto
+  ) {
+    return this.listingService.create(createListingInput);
   }
 }

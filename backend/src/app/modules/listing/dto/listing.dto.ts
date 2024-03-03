@@ -1,8 +1,9 @@
-import { OmitType } from '@nestjs/graphql';
+import { InputType, OmitType } from '@nestjs/graphql';
 import { Listing } from '../entity/listing.entity';
 
-export class CreateListingDto extends OmitType(Listing, [
-  'id',
-  'createdAt',
-  'updatedAt',
-] as const) {}
+@InputType()
+export class CreateListingDto extends OmitType(
+  Listing,
+  ['id', 'createdAt', 'updatedAt'] as const,
+  InputType
+) {}

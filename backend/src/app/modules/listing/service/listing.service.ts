@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-// import { CreateListingDto } from '../dto/listing.dto';
 import { nanoid } from 'nanoid';
 import { Listing } from '@prisma/client';
 import { PrismaService } from '../../prisma/service/prisma.service';
@@ -23,16 +22,4 @@ export class ListingService {
 
     return this.prisma.listing.create({ data: listing });
   }
-
-  // async createListingForUser(
-  //   userId: string,
-  //   listingData: CreateListingDto
-  // ): Promise<Listing> {
-  //   return this.prisma.listing.create({
-  //     data: {
-  //       ...listingData,
-  //       userId: userId,
-  //     },
-  //   });
-  // }
 }
