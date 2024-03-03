@@ -15,7 +15,7 @@ export class TransactionResolver {
   async purchaseListing(
     @Args('userId') userId: string,
     @Args('listingId') listingId: string
-  ): Promise<string> {
+  ) {
     return this.transactionService.createTransaction(userId, listingId);
   }
 }

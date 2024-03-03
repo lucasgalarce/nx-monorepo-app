@@ -1,5 +1,5 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-import { BaseEntity } from 'backend/src/utils/entity-base';
+import { BaseEntity } from '../../../../utils/entity-base';
 import { User } from '../../user/entity/user.entity';
 import { Listing } from '../../listing/entity/listing.entity';
 
