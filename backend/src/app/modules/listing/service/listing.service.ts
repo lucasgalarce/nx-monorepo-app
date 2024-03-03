@@ -9,7 +9,11 @@ export class ListingService {
   constructor(private prisma: PrismaService) {}
 
   async findAll(): Promise<Listing[]> {
-    return this.prisma.listing.findMany();
+    return this.prisma.listing.findMany({
+      include: {
+        transactions: true,
+      },
+    });
   }
 
   async create(createListingDto: CreateListingDto): Promise<Listing> {

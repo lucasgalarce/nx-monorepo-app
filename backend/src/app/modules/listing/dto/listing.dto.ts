@@ -4,6 +4,6 @@ import { Listing } from '../entity/listing.entity';
 @InputType()
 export class CreateListingDto extends OmitType(
   Listing,
-  ['id', 'createdAt', 'updatedAt'] as const,
+  ['id', 'createdAt', 'updatedAt', 'transactions'] as const,
   InputType
 ) {}
