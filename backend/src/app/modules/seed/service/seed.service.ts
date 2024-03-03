@@ -21,8 +21,13 @@ export class SeedService {
         email: faker.internet.email(),
       });
       await this.listingService.create({
-        name: faker.internet.userName(),
-        email: faker.internet.email(),
+        title: faker.commerce.productName(),
+        description: faker.commerce.productDescription(),
+        price: parseFloat(faker.commerce.price()),
+        address1: faker.location.streetAddress(),
+        address2: faker.location.secondaryAddress(),
+        state: faker.location.state(),
+        zipcode: faker.location.zipCode(),
       });
     }
     this.logger.debug('Done seeding.');

@@ -1,6 +1,6 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-import { BaseEntity } from 'backend/src/utils/entity-base';
-import { Listing } from '../../listing/entity/listing.entity';
+import { BaseEntity } from '../../../../utils/entity-base';
+// import { Listing } from '../../listing/entity/listing.entity';
 
 @ObjectType()
 export class User extends BaseEntity {
@@ -10,6 +10,6 @@ export class User extends BaseEntity {
   @Field()
   email: string;
 
-  @Field(() => [Listing], { nullable: 'itemsAndList' })
-  listings?: Listing[];
+  // @Field(() => [Listing], { nullable: 'itemsAndList' })
+  // listings?: Listing[];
 }

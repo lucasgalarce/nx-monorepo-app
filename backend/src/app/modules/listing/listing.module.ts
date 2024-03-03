@@ -5,5 +5,6 @@ import { PrismaService } from '../prisma/service/prisma.service';
 
 @Module({
   providers: [ListingService, ListingResolver, PrismaService],
+  exports: [ListingService],
 })
 export class ListingModule {}

@@ -1,6 +1,6 @@
 import { Field, Float, ObjectType } from '@nestjs/graphql';
-import { BaseEntity } from 'backend/src/utils/entity-base';
-import { User } from '../../user/entity/user.entity';
+import { BaseEntity } from '../../../../utils/entity-base';
+// import { User } from '../../user/entity/user.entity';
 
 @ObjectType()
 export class Listing extends BaseEntity {
@@ -25,9 +25,9 @@ export class Listing extends BaseEntity {
   @Field()
   zipcode: string;
 
-  @Field(() => User, { nullable: true })
-  user: User;
+  // @Field(() => User, { nullable: true })
+  // user: User;
 
-  @Field({ nullable: true })
-  userId: string;
+  // @Field({ nullable: true })
+  // userId: string;
 }

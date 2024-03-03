@@ -24,11 +24,8 @@ export class TransactionService {
   //   return this.prisma.user.create({ data: user });
   // }
 
-  async purchaseListing(
-    userId: string,
-    listingId: string
-  ): Promise<Transaction> {
-    return this.prisma.transaction.create({
+  async createTransaction(userId: string, listingId: string): Promise<string> {
+    this.prisma.transaction.create({
       data: {
         user: {
           connect: { id: userId },
@@ -38,5 +35,7 @@ export class TransactionService {
         },
       },
     });
+
+    return 'Transaction created';
   }
 }
